@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Campus Event Management Design System - Modern & Vibrant */
+
+@layer base {
+  :root {
+    /* Base colors - Modern blue-purple theme */
+    --background: 240 10% 98%;
+    --foreground: 230 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+
+    /* Primary - Deep blue with purple undertones */
+    --primary: 235 65% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 235 65% 20%;
+
+    /* Secondary - Soft purple */
+    --secondary: 260 30% 92%;
+    --secondary-foreground: 235 65% 25%;
+
+    --muted: 240 10% 94%;
+    --muted-foreground: 230 10% 45%;
+
+    /* Accent - Vibrant purple */
+    --accent: 270 70% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 15% 88%;
+    --ring: 235 65% 25%;
+
+    /* Campus-specific colors */
+    --hero-gradient: linear-gradient(135deg, hsl(235, 65%, 25%) 0%, hsl(270, 70%, 60%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(240, 20%, 98%) 100%);
+    --accent-gradient: linear-gradient(135deg, hsl(270, 70%, 60%) 0%, hsl(300, 70%, 65%) 100%);
+    --success-gradient: linear-gradient(135deg, hsl(150, 70%, 45%) 0%, hsl(170, 60%, 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(235, 25%, 25%, 0.08);
+    --shadow-medium: 0 8px 25px -8px hsl(235, 25%, 25%, 0.15);
+    --shadow-large: 0 25px 50px -12px hsl(235, 25%, 25%, 0.25);
+
+    /* Animation durations */
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Deep navy with purple accents */
+    --background: 230 25% 8%;
+    --foreground: 240 10% 95%;
+
+    --card: 230 20% 10%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 230 20% 10%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 270 70% 60%;
+    --primary-foreground: 230 25% 8%;
+    --primary-hover: 270 70% 55%;
+
+    --secondary: 230 15% 15%;
+    --secondary-foreground: 240 10% 90%;
+
+    --muted: 230 15% 12%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 230 25% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 230 25% 8%;
+
+    --border: 230 15% 18%;
+    --input: 230 15% 18%;
+    --ring: 270 70% 60%;
+
+    /* Dark mode gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(230, 25%, 8%) 0%, hsl(270, 40%, 15%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(230, 20%, 10%) 0%, hsl(230, 15%, 12%) 100%);
+    --accent-gradient: linear-gradient(135deg, hsl(270, 70%, 60%) 0%, hsl(300, 70%, 65%) 100%);
+
+    --shadow-soft: 0 2px 8px -2px hsl(0, 0%, 0%, 0.2);
+    --shadow-medium: 0 8px 25px -8px hsl(0, 0%, 0%, 0.3);
+    --shadow-large: 0 25px 50px -12px hsl(0, 0%, 0%, 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom animations */
+  .fade-in {
+    animation: fadeIn var(--duration-normal) ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp var(--duration-normal) ease-out;
+  }
+
+  .hero-bg {
+    background: var(--hero-gradient);
+  }
+
+  .card-bg {
+    background: var(--card-gradient);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .accent-bg {
+    background: var(--accent-gradient);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
